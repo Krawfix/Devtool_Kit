@@ -84,4 +84,80 @@ class Taskmgr {
         tasks.emplace_back(name, desc, dueDate);
         std::cout <<"Task added successfully!" << std::endl;
     }
+    void deleteTask()
+    {
+        // CHechking whether there are any tasks or NOT
+        if (tasks.empty()){
+            std::cout<< "NO Task to delete !"<< std::endl;
+            return;
+        }
+        std::cout<< "Tasks: " << std::endl;
+
+        for (int i=0; i<tasks.size(); ++i )
+        {   
+            // FOr getting the Task Names
+            std::cout << i+1 << ". " << tasks[i].getName() << std::endl;
+        }
+        std::cout<< "Enter the Task Number you want to Delete"<< std::endl;
+        int taskNum;
+        std::cin >> taskNum ;
+        if (taskNum >= 1 && taskNum <= tasks.size())
+        {
+            tasks.erase(tasks.begin() + taskNum -1);
+            std::cout << "Task Deleted successfully !" << std::endl;
+        }
+        else 
+        {
+            std::cout << "Invalid Task Number :(" << std::endl;
+        }
+    }
+    //Use Tasks don't use task on function name cuz it will cause confilcts later on 
+    void displayTasks()
+     {
+        if (tasks.empty()){
+            std::cout << "No Tasks to Show !" << std::endl;
+            return;
+        }
+        std::cout << "Tasks: " << std::endl;
+        for (int i = 0 ; i < tasks.size(); ++i)
+        {
+            // Didn't used endl cuz there will be duplication of number :(
+            std:: cout << i+1 << ". ";
+             tasks[i].displayTask();
+        }
+    }
+
+    void markTaskCompleted() 
+    {
+        if (tasks.empty()) 
+        {
+            std::cout << "No task to Marks as completed" << std::endl;
+            return;
+        }
+        std::cout << "Tasks: " << std::endl;
+        for ( int i=0 ; i< tasks.size(); ++i)
+        {
+            std::cout << i+1 << ". " << tasks[i].getName() << std::endl;
+        }
+        std::cout << "Enter the Task Number TO Mark as Completed: " << std::endl;
+        int taskNum;
+        std::cin >> taskNum;
+        if (taskNum <= tasks.size() && taskNum >= 1)
+        {
+            tasks[taskNum - 1].markCompleted();
+        }
+        else 
+        {
+            std::cout << "INVALID Task Number !" << std::endl;
+        }
+    }
+
+    void editTask()
+    {
+        if ( tasks.size())
+        {
+            std::cout << "No Tasks TO edit" << std::endl;
+            return;
+        }
+    }
 };
