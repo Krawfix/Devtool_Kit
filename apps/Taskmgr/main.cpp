@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+
+const std::string TASKS_FILE = "tasks.txt";
 
 class Task
 {
@@ -28,7 +31,7 @@ public:
     std::string getDueDate() const { return dueDate; }
 
     // For getting completion status
-    bool iscCompleted() const { return completed; }
+    bool isCompleted() const { return completed; }
 
     // Here the value is passed by reference method due to the  use of '&' on the string on the const std::string and '->' variable is used to use the member var inside the object
 
@@ -60,7 +63,7 @@ public:
     // Displays the Taskmgr Menu for the selection of options via user
     void displayMenu()
     {
-        std::cout << "\n -------------------Task-Manager-------------------";
+        std::cout << "\n -------------------Task-Manager------------------- \n";
         std::cout << "1. Add Task\n";
         std::cout << "2. Display Tasks\n";
         std::cout << "3. Delete Task\n";
@@ -174,19 +177,19 @@ public:
         {
             Task &task = tasks[taskNum - 1];
             std::string name, desc, dueDate;
+
             std::cout << "Enter NEW task name (current: " << task.getName() << "): ";
             std::cin.ignore();
             std::getline(std::cin, name);
             task.setName(name);
 
             std::cout << "Enter NEW task Description (current: " << task.getDesc() << "): ";
-            std::cin.ignore();
             std::getline(std::cin, desc);
-            task.setName(desc);
+            task.setDesc(desc);
 
-            task.setName("name");
-            task.setDesc("desc");
-            task.setDueDate("dueDate");
+            std::cout << "Enter New Due Date (current: " << task.getDueDate() << "): ";
+            std::getline(std::cin, dueDate);
+            task.setDueDate(dueDate);
 
             std::cout << "Task Updated Successfully" << std::endl;
         }
@@ -232,6 +235,7 @@ public:
             }
         } while (choice != 6);
     }
+    
 };
 
 int main()
