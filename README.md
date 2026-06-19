@@ -47,3 +47,8 @@ THe project help me learn : -
 - Command-line application development
 
 ## Screenshots 
+<img width="467" height="199" alt="image" src="https://github.com/user-attachments/assets/352228ca-65c5-4c74-b103-0e0d51f54e9f" />
+<img width="421" height="229" alt="image" src="https://github.com/user-attachments/assets/bbc307bf-7961-4c3a-b1f9-fbdd3f8ec983" />
+<img width="422" height="257" alt="image" src="https://github.com/user-attachments/assets/26657ed0-370f-4c01-8034-f3aa14df6931" />
+
+
