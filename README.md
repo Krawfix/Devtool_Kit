@@ -38,6 +38,10 @@ The Task Manager stores all task information in a local file named tasks.txt. Ev
 `` g++ taskmgr.cpp -o taskmgr.exe`` 
 ``taskmgr.exe``
 
+## How to use the file 
+For using the program you can go to the releases of this repo and download it for your platform.
+Note : The files are on .zip format you need to extract it ( for windows .exe file is provided with the tasks.txt file and for the linux you need to run the precomplied file using ``./taskmgr``
+
 ## Learning Outcomes
 
 THe project help me learn : -
