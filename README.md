@@ -31,11 +31,11 @@ The Task Manager stores all task information in a local file named tasks.txt. Ev
 # Building the Project
 
 ## Linux
-`` g++ main.cpp -o taskmgr ``
+`` g++ taskmgr.cpp -o taskmgr ``
 ``./taskmgr ``
 
 ## Windows
-`` g++ main.cpp -o taskmgr.exe`` 
+`` g++ taskmgr.cpp -o taskmgr.exe`` 
 ``taskmgr.exe``
 
 ## Learning Outcomes
